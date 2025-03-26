@@ -1,0 +1,25 @@
+<ul>
+  <ng-container *ngFor="let node of nodes">
+    <li>
+      <span
+        [ngClass]="{
+          deleted: node.is_deleted,
+          'has-children': node.children?.length,
+        }"
+        (click)="node.children?.length ? toggleNode(node) : null"
+      >
+        <span *ngIf="node.children?.length">
+          <i
+            class="fas"
+            [ngClass]="isExpanded(node) ? 'fa-chevron-up' : 'fa-chevron-down'"
+          ></i>
+        </span>
+        {{ node.id }} - {{ node.title }}
+      </span>
+
+      <ul *ngIf="isExpanded(node)">
+        <app-tree-view [nodes]="node.children"></app-tree-view>
+      </ul>
+    </li>
+  </ng-container>
+</ul>

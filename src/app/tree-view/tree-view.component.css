@@ -1,0 +1,36 @@
+ul {
+  list-style: none;
+  font-family: 'Arial', sans-serif;
+  font-size: 1.3rem;
+  user-select: none;
+}
+
+span {
+  display: inline-block;
+  padding: 5px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+span.has-children {
+  cursor: pointer;
+}
+
+span:hover {
+  transform: scale(1.1);
+  transform-origin: left;
+}
+
+i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.deleted {
+  color: gray;
+}
+
+/* добавить медиа запросы ? */
